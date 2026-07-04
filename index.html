@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JADORE ALAA | High-End Luxury Couture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&amp;family=Montserrat:wght@100;200;300;400;500;600;700&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#574500",
+                    "on-primary-fixed": "#2b1706",
+                    "inverse-on-surface": "#f7efeb",
+                    "inverse-primary": "#e5bfa5",
+                    "on-surface-variant": "#4f453e",
+                    "surface-variant": "#e9e1dd",
+                    "inverse-surface": "#33302d",
+                    "error-container": "#ffdad6",
+                    "secondary": "#755b00",
+                    "surface-container-highest": "#e9e1dd",
+                    "tertiary-container": "#cba72f",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "surface-tint": "#755843",
+                    "surface-bright": "#fff8f5",
+                    "surface": "#fff8f5",
+                    "tertiary": "#735c00",
+                    "on-primary-container": "#e9c2a8",
+                    "secondary-fixed-dim": "#ecc246",
+                    "primary-fixed-dim": "#e5bfa5",
+                    "on-tertiary-fixed": "#241a00",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#81756d",
+                    "surface-container-high": "#eee7e3",
+                    "on-primary": "#ffffff",
+                    "primary-fixed": "#ffdcc4",
+                    "background": "#fff8f5",
+                    "surface-container-low": "#faf2ee",
+                    "on-tertiary-container": "#4e3d00",
+                    "on-error": "#ffffff",
+                    "surface-container": "#f4ece9",
+                    "on-secondary-fixed-variant": "#584400",
+                    "on-background": "#1e1b19",
+                    "on-secondary-container": "#735a00",
+                    "primary": "#513825",
+                    "on-secondary-fixed": "#241a00",
+                    "on-surface": "#1e1b19",
+                    "outline-variant": "#d3c4ba",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#fed255",
+                    "primary-container": "#6b4f3a",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#ffe088",
+                    "secondary-fixed": "#ffe08e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "32px",
+                    "unit": "8px",
+                    "margin-desktop": "80px",
+                    "margin-mobile": "20px",
+                    "container-max": "1440px",
+                    "stack-lg": "64px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-md": ["montserrat"],
+                    "display-lg": ["ebGaramond"],
+                    "label-sm": ["montserrat"],
+                    "headline-md": ["ebGaramond"],
+                    "body-lg": ["montserrat"],
+                    "label-md": ["montserrat"],
+                    "headline-lg": ["ebGaramond"],
+                    "serif-luxury": ["Cormorant Garamond", "serif"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-nav {
+            background: rgba(255, 248, 245, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .scrolling-text {
+            animation: scroll 20s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .image-zoom-container:hover img {
+            transform: scale(1.08);
+        }
+        .product-card-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .product-card:hover .product-card-overlay {
+            opacity: 1;
+        }
+        .whatsapp-bounce {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+        #preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: #fff8f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s ease-out, visibility 0.8s;
+        }
+        .preloader-content {
+            text-align: center;
+            animation: fadeInScale 1.2s ease-out forwards;
+        }
+        @keyframes fadeInScale {
+            0% { opacity: 0; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Luxury Preloader -->
+<div id="preloader">
+<div class="preloader-content">
+<h1 class="font-display-lg text-headline-lg tracking-widest text-primary font-bold">JADORE ALAA</h1>
+<div class="mt-4 h-[1px] w-0 bg-primary mx-auto transition-all duration-1000 ease-out" id="loader-bar"></div>
+</div>
+</div>
+<!-- Floating WhatsApp Button -->
+<a aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-[60] bg-[#25D366] text-white p-4 rounded-full shadow-2xl whatsapp-bounce hover:scale-110 transition-transform duration-300 flex items-center justify-center" href="https://wa.me/201000320065" target="_blank">
+<svg class="w-7 h-7 fill-current" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zM16.522 13.59c-.273-.137-1.617-.798-1.868-.889-.252-.092-.435-.137-.617.137-.183.274-.708.889-.868 1.072-.16.182-.32.205-.593.068-.273-.136-1.155-.425-2.199-1.355-.812-.724-1.36-1.618-1.519-1.892-.16-.274-.017-.422.12-.559.123-.122.274-.32.411-.48.136-.16.183-.274.274-.457.091-.182.046-.342-.023-.48-.069-.137-.617-1.485-.845-2.033-.222-.534-.445-.461-.617-.469-.159-.007-.342-.008-.525-.008s-.48.069-.731.342c-.252.274-.96.937-.96 2.285s.983 2.651 1.12 2.834c.137.182 1.935 2.954 4.688 4.141.655.283 1.166.451 1.565.578.658.209 1.258.179 1.732.109.529-.079 1.617-.662 1.846-1.302.228-.64.228-1.187.16-1.302-.07-.115-.252-.183-.526-.32z"></path>
+</svg>
+</a>
+<!-- Premium Announcement Bar -->
+<div class="w-full bg-surface-container-lowest py-2 overflow-hidden border-b border-outline-variant/10">
+<div class="whitespace-nowrap scrolling-text font-label-sm text-secondary uppercase tracking-[0.2em]">
+            Free Shipping on orders over 5000 EGP • Complimentary Bespoke Consultations • Worldwide Express Delivery • Artisanal Craftsmanship from Alexandria
+        </div>
+</div>
+<!-- Transparent Luxury Navbar -->
+<nav class="sticky top-0 z-50 flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-5 transition-all duration-500" id="top-nav">
+<div class="flex items-center gap-gutter">
+<button class="md:hidden">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+<div class="hidden md:flex gap-8">
+<a class="font-label-md text-label-md uppercase tracking-[0.1em] text-on-surface-variant hover:text-primary transition-colors" href="#collections">Collections</a>
+<a class="font-label-md text-label-md uppercase tracking-[0.1em] text-on-surface-variant hover:text-primary transition-colors" href="#curated-edit">Couture</a>
+<a class="font-label-md text-label-md uppercase tracking-[0.1em] text-on-surface-variant hover:text-primary transition-colors" href="#preloader">Bridal</a>
+</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 text-center">
+<h1 class="font-display-lg text-[24px] md:text-headline-lg tracking-tighter text-primary font-bold"><a href="#">JADORE ALAA</a></h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center border-b border-outline-variant/30 pb-1">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-sm placeholder:text-outline/50 w-32 uppercase" placeholder="SEARCH" type="text"/>
+</div>
+<a class="material-symbols-outlined text-primary hover:opacity-70 transition-opacity" href="#">favorite</a>
+<a class="material-symbols-outlined text-primary hover:opacity-70 transition-opacity" href="#">shopping_bag</a>
+<a class="material-symbols-outlined text-primary hover:opacity-70 transition-opacity" href="#">person</a>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-[921px] w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-[20s] scale-110 hover:scale-100" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCtCe9cL4YuxmqZVE3rIg9lT1XhjwkhV_Xv330WIdZDtzvPbkX4OjxkmSV5NiovA1Nla2VAOk-f_ArFvGSzWOmbYGtvgIAXtTjDZmyGDQ_doGu7VbThfZaDIFIL6rK2gad9V1bd9lQkMLtWDOhN6s9KbvYolKqlLcVyea71DwxgINq9a6xPdD1JZ8XS4Cchw2-5hIof1eQkb1qQa01SxgBAEKvXhLaNjAb9r6JplCLAHfgoicgVnUXV')"></div>
+<div class="absolute inset-0 bg-black/10"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile" data-aos="fade-up" data-aos-duration="1200">
+<span class="font-label-md text-white/90 uppercase tracking-[0.4em] mb-4 block">New Season 2024</span>
+<h2 class="font-serif-luxury text-[48px] md:text-[84px] text-white leading-tight mb-8">The Art of Elegance</h2>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<a class="px-10 py-4 bg-primary text-white font-label-md uppercase tracking-widest hover:bg-primary-container hover:text-on-primary-container transition-all shadow-xl" href="#curated-edit">Shop Collection</a>
+<a class="px-10 py-4 border border-white text-white font-label-md uppercase tracking-widest hover:bg-white hover:text-primary transition-all backdrop-blur-sm" href="#brand-story">Explore Couture</a>
+</div>
+</div>
+</header>
+<!-- Featured Categories -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-lg" id="collections">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="group relative aspect-[3/4] overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+<div class="w-full h-full image-zoom-container overflow-hidden">
+<img alt="New Arrivals" class="w-full h-full object-cover transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMWXCuDSEFJ_K7O8_qqc4MfyQM6EiQr1wGtFEHdUfM2U72a4qeFdk7NUW3KPwRqIzWMRuyMt1xION9nkoeHOdQOQCJYK1tIVlG8qz1bsaRo6YL2PIYwOguLPxodHrTLYt99KbByCgDoL6eiY4MPb9p5sLOkWS01WokhsjWnivbfQhGBz4O14yZ8h8Gi-AWHtWeNXxrF5keK2vvWHe1ObVHl3y9vunTrZ8wVx-b9JyT8OiV0pLuJtFI"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8">
+<h3 class="text-white font-headline-md mb-2">New Arrivals</h3>
+<p class="text-white/80 font-label-sm uppercase tracking-widest">Discover More</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative aspect-[3/4] overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+<div class="w-full h-full image-zoom-container overflow-hidden">
+<img alt="Best Sellers" class="w-full h-full object-cover transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8Z1LLD3B5wXupRdbbdzRxQzaLWrpwy66aFTzniDg1AxoZ_bNEBX5WPtWqa8bacHLekqWP2GLjUDnUr7YsduKJBa2ofPACOOU1pFboQOiyDhN-etfDUNl9Qcz50PcwhkqRx2BnNE8QDyjq39QK-cQAn7XOg3pXX-bGlkl2D06-GK1g5seu7L7QCHdWHJWE3FYOZDIygIWIj7JH5gHAy2ZCqpVHO96nega7pD6RauUEv8-Xf98XYstY"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8">
+<h3 class="text-white font-headline-md mb-2">Best Sellers</h3>
+<p class="text-white/80 font-label-sm uppercase tracking-widest">Shop Icons</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative aspect-[3/4] overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+<div class="w-full h-full image-zoom-container overflow-hidden">
+<img alt="Dresses" class="w-full h-full object-cover transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3bdHOqYRcj36spMcrbY9xCyxKf_HGCogw6E1UFc-0fWqjw5pE8gVh7O2baa9LGgY2nSEU9umoeB_4K-orQumiultK66lWnx_v_x5wMboI_6IxPslh8fMyPIzYrBnPeG5S8fkRrldNYSVijvVGmCAdh35N8uYcPW6OGrvtQxIOH_E1uazQXMvzE2dCmDvvpoD6Tg77ECV6wptjdwILMm6yCT99ljMUDb_nxnKhIXZExRi9YyDjge9v"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8">
+<h3 class="text-white font-headline-md mb-2">Dresses</h3>
+<p class="text-white/80 font-label-sm uppercase tracking-widest">View All</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group relative aspect-[3/4] overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="400">
+<div class="w-full h-full image-zoom-container overflow-hidden">
+<img alt="Blazers" class="w-full h-full object-cover transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX7A6NDsbd5_b8WhLO-8iToidU6yDav_isBqYeZd0eccbJdCOe1u5W_pF_SLQeuTiDMgdOOlU3m2WbfFf96zyE1injK7EwXS6VH5H-xnWtoAOMG9oyTzWGTMREz31Oo9he8kU_5m73M11RyuafN1-lTNhaeZqetmn9LCaI78Ga4pO5yoL9MBcvLXuEqhqPKIGnHAafI7NgcwdC8oCUQE-W0wrNptylA4w-e-bcVwm9VBGezPyyVNK9"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8">
+<h3 class="text-white font-headline-md mb-2">Blazers</h3>
+<p class="text-white/80 font-label-sm uppercase tracking-widest">Tailored Perfection</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Flash Sale Countdown -->
+<section class="bg-surface-container-low py-stack-md border-y border-outline-variant/10" id="sale">
+<div class="px-margin-mobile flex flex-col md:flex-row items-center justify-center gap-gutter">
+<div class="text-center md:text-left">
+<span class="font-label-md text-secondary uppercase tracking-[0.3em]">Exclusive Access</span>
+<h2 class="font-serif-luxury text-headline-lg text-primary">Private Sale Ending Soon</h2>
+</div>
+<div class="flex gap-8">
+<div class="text-center">
+<span class="block font-serif-luxury text-[48px] text-tertiary-container leading-none" id="days">02</span>
+<span class="font-label-sm text-outline uppercase">Days</span>
+</div>
+<div class="text-center">
+<span class="block font-serif-luxury text-[48px] text-tertiary-container leading-none" id="hours">14</span>
+<span class="font-label-sm text-outline uppercase">Hours</span>
+</div>
+<div class="text-center">
+<span class="block font-serif-luxury text-[48px] text-tertiary-container leading-none" id="mins">45</span>
+<span class="font-label-sm text-outline uppercase">Mins</span>
+</div>
+<div class="text-center">
+<span class="block font-serif-luxury text-[48px] text-tertiary-container leading-none" id="secs">12</span>
+<span class="font-label-sm text-outline uppercase">Secs</span>
+</div>
+</div>
+<a class="px-8 py-3 bg-primary text-white font-label-md uppercase tracking-widest hover:shadow-lg transition-all" href="#curated-edit">Shop The Sale</a>
+</div>
+</section>
+<!-- Featured Products -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-lg" id="curated-edit">
+<div class="flex justify-between items-end mb-stack-md">
+<div>
+<h2 class="font-serif-luxury text-display-lg leading-none text-primary">The Curated Edit</h2>
+<p class="text-on-surface-variant max-w-md mt-4">Discover our hand-picked selection of this season's most coveted couture pieces.</p>
+</div>
+<a class="font-label-md text-primary uppercase border-b border-primary pb-1 hover:opacity-50 transition-all" href="#collections">View All Products</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="product-card group cursor-pointer" data-aos="fade-up">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden mb-4">
+<img alt="Alexandria Belted Coat" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB2uEjQTXnGixCt9UKFm_-OPp0HHA4vxO8Ah3l1AKj2tfzcOBUV5qWhOemuVPpfKmB9G6UWTlEi-WfdD5sCh1EONATwKaMqOrhSiTvtn993EcwFqjpRXtl12SaF1T5fAL-Qr1nJb_vY9VLGbjkm80gfWNZDiGEcPe9hmqoqgemUM4FJ9ESw2bZqo8b4b07-o2i1fPi90vCsZThLPtA2kHJZq3DaLpmIxDaXLhLx8BeDxPt_W77pzQx"/>
+<div class="product-card-overlay absolute inset-0 bg-black/5 flex flex-col justify-end p-4">
+<button class="w-full bg-white/90 backdrop-blur-md py-3 font-label-sm uppercase tracking-widest text-primary hover:bg-primary hover:text-white transition-all">Quick View</button>
+</div>
+<span class="absolute top-4 left-4 bg-white px-3 py-1 font-label-sm uppercase tracking-widest text-primary">New In</span>
+</div>
+<div class="text-center px-2">
+<p class="font-label-sm text-outline uppercase tracking-widest mb-1">Couture</p>
+<h4 class="font-body-md text-on-surface mb-1">Alexandria Belted Coat</h4>
+<p class="font-body-md text-primary-container font-semibold">12,500 EGP</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="product-card group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden mb-4">
+<img alt="Evening Silk Cowl Dress" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZb6W06KKE1GJki0wZPSK9e74Zytxrm0vUneYEMASrxcs0APCwkv197rZHW9jRmWO9bl2T8HnA1JeQOx_RKDv_909FQgIXJEGrhomSRpNAc2f43Xubv-lBvSzTRVN2xeIpptcoHDW7u9MwGhN-mkHTAchnnOsOYjGgUMLiTmVV0aqMVjcEHWmkS_sSd4ztOWG7EQiSuZihJYfL6i6GPtQywZw-EeFaNxP6q9bOUBNZDIJWxXYG-3FD"/>
+<div class="product-card-overlay absolute inset-0 bg-black/5 flex flex-col justify-end p-4">
+<button class="w-full bg-white/90 backdrop-blur-md py-3 font-label-sm uppercase tracking-widest text-primary hover:bg-primary hover:text-white transition-all">Quick View</button>
+</div>
+</div>
+<div class="text-center px-2">
+<p class="font-label-sm text-outline uppercase tracking-widest mb-1">Dresses</p>
+<h4 class="font-body-md text-on-surface mb-1">Evening Silk Cowl Dress</h4>
+<p class="font-body-md text-primary-container font-semibold">8,900 EGP</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="product-card group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden mb-4">
+<img alt="Tailored Palazzo Pant" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGerJcK4Sg2nPLtxunW7tHFgyX4wEUVoN5kutp84mbraPu8NR54YHASOtYe4x19nJQ4KIDSvlMoqkF5AV21HKbXZzEv0TXPKC-Izb7XDpD7ZsSciV6C_8mE9cPPwKH7FMTCiJkEAkueyIeB55qkXw7hJx5DDh4oobun7P5-dmRsFnz44l8GAOq-8pNC-JUW52HFp0siH5taAd__gib9lr5TCRlJM1Ot5kmLguk0UzQmbs49Z3WAwBa"/>
+<div class="product-card-overlay absolute inset-0 bg-black/5 flex flex-col justify-end p-4">
+<button class="w-full bg-white/90 backdrop-blur-md py-3 font-label-sm uppercase tracking-widest text-primary hover:bg-primary hover:text-white transition-all">Quick View</button>
+</div>
+</div>
+<div class="text-center px-2">
+<p class="font-label-sm text-outline uppercase tracking-widest mb-1">Trousers</p>
+<h4 class="font-body-md text-on-surface mb-1">Tailored Palazzo Pant</h4>
+<p class="font-body-md text-primary-container font-semibold">5,200 EGP</p>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="product-card group cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden mb-4">
+<img alt="Petite Atelier Bag" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvzle7E1xVUhOsgnTeDVxh4pExewwrG0HtssbnxWkLHTgvk3kD1TA0-OxOEy0Ej_2f7Tzc0h7YJQ2HVW6-7yxgfRYcFLKkqeHl5QcHJgghzbDbtexg-_zIv0gdoYQlyswYI5qlnK4ExrawFlJ-vsdYqDuTZyV4ScGshu61WyntG4Re_7Rwn8YTDcsMwSRWCU2D_U3keaSmPTiQNX5BZ05JU0N4C-yDBnXkmk0lZu0CTDRlDSU3SIAV"/>
+<div class="product-card-overlay absolute inset-0 bg-black/5 flex flex-col justify-end p-4">
+<button class="w-full bg-white/90 backdrop-blur-md py-3 font-label-sm uppercase tracking-widest text-primary hover:bg-primary hover:text-white transition-all">Quick View</button>
+</div>
+</div>
+<div class="text-center px-2">
+<p class="font-label-sm text-outline uppercase tracking-widest mb-1">Accessories</p>
+<h4 class="font-body-md text-on-surface mb-1">Petite Atelier Bag</h4>
+<p class="font-body-md text-primary-container font-semibold">15,700 EGP</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Story Preview -->
+<section class="bg-surface-container-low py-24" id="brand-story">
+<div class="px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="order-2 lg:order-1" data-aos="fade-right">
+<span class="font-label-md text-secondary uppercase tracking-[0.3em] mb-4 block">Our Roots</span>
+<h2 class="font-serif-luxury text-[40px] md:text-display-lg text-primary mb-8 leading-tight">Born in Alexandria, Crafted for the World</h2>
+<div class="space-y-6 font-body-lg text-on-surface-variant leading-relaxed">
+<p>JADORE ALAA was founded on the breezy shores of Alexandria, where the Mediterranean's timeless beauty meets the precision of artisanal tailoring. Our mission is simple: to redefine Egyptian luxury through a lens of contemporary minimalism.</p>
+<p>Every piece in our collection is a testament to the hands that made it—sourced from the finest mills and crafted by masters who have spent decades perfecting the art of the stitch.</p>
+</div>
+<a class="inline-block mt-10 font-label-md text-primary uppercase border-b-2 border-secondary pb-1 hover:border-primary transition-all" href="#curated-edit">Read Our Story</a>
+</div>
+<div class="order-1 lg:order-2 relative" data-aos="fade-left">
+<div class="aspect-[4/5] bg-surface overflow-hidden">
+<img alt="Atelier Craftsmanship" class="w-full h-full object-cover grayscale opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9Yz_PTsQ-Lz4EZB8r6xSAujFmpyphi1ejcHFY9tnfvWhoAR2zqX6PvMRIYM7W9zYlKfqDdsIvDfpUmjcWF56csClqeKteC6gmpbNp4B6GCWOADyUdqYREBvJadfwffqmaVELyfY-te_HCAicSKQmGw07GGKf5CTIo2ru-2qijKDkIZcyjniTffXEBwVEvJEciRy0a_0IM8ja3qTNXy55s92fj-qYiAQkdYPj0MUXYeXlj4p6dFRF1"/>
+</div>
+<div class="absolute -bottom-10 -left-10 w-64 h-80 hidden md:block border-4 border-white shadow-2xl overflow-hidden">
+<img alt="Alexandria Shoreline" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBwioKAcMsDuIIMqVX_lxetaPLuLQyV2_uEmnZJ3OQJ3JyVGhMlfxuO2mgBfi0ydvdD1ufak97U9MH7mRbPKw3zwdIwsdrTMGIBPE-Gy3wOSmpRzvFdC0BGtoR4xKnfVxX3H9SVMfmnQU9gsJycY8K5lpFvkOl7R7gmGq1GSrkrvqiivIj-Trh1tmTmH6-vd25A1kKS06livHYVdQplIltVOrfVszamW1Yk58yZjbEp0cQz8klC2_d"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Instagram Feed -->
+<section class="py-stack-lg overflow-hidden" id="social">
+<div class="px-margin-mobile text-center mb-12">
+<h2 class="font-label-md text-outline uppercase tracking-[0.4em] mb-2">Follow the Journey</h2>
+<a class="font-serif-luxury text-headline-lg text-primary hover:opacity-70 transition-opacity" href="https://www.facebook.com/share/1GzxjJjCEM/" target="_blank">@JADOREALAA_OFFICIAL</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-1 px-1">
+<div class="aspect-square bg-surface-container-highest overflow-hidden">
+<img alt="Lifestyle 1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhAbl-mWUmlSluJOBYOk1yFsVpKxXA8NG7_AzRybHJT3VzaNMcr2OBIJuy0u0KW9SfnHOrikRevK_Tw9Z_9hlr89l6h4Wyf5HA_9cqGcMTDOxINnTF8engI9trhSPGwV_FmGLYCoKBG4DFioBl8Y2_vsFv-sCZenNMoytXm5kGg6ssBjXwxtjgP3UaUCoznLNMMsFzLd2zKAJ1pTJnrLqgkMEcK9QwIfBX1po9WTwYG41c-Spz76TR"/>
+</div>
+<div class="aspect-square bg-surface-container-highest overflow-hidden">
+<img alt="Lifestyle 2" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjPAm5wA6YE4aXkvktyhJgUgAHyWHGuTYm23p5Xh8_bvUbMKKJJlhZ8_5b9lrSI_411o3wISj2-sF5Hyf0GgWOKPjCUkQb1VELgtlKqKG0I_y3BznZHJFCJI13FsIXrh2acF9YBurMNhXRxZHtxl1UNDGZhgbs0H2IFrJpzoxBqnu-PSSVdJaXMc9KdXl2du4wraUkqWNMYPUPW85LJIKw36ewsNPsp7Po-sqWI114QDas2DYOD6L2"/>
+</div>
+<div class="aspect-square bg-surface-container-highest overflow-hidden">
+<img alt="Lifestyle 3" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlDDMjrTUkHHdKK5VDBI20eo7QurpGPdjDhwvKNYtQjNU9YPqUfWsHX9LRA9p4NTI9Rbo2HATU64JE4LbovbUmxAKM1tcoLfzDCieE16LjTLQAZ7_jUDNgvE_FdyJwV0UhKDQgWd5if2Kt0akHc4qqwQNuW25JxImgDiSdC_QZStCSTN4RYIXEWAHBoyC4SOsqYXl3S7xidn1w1pnLKdUMCQzDgmNbFG-_ZSJNfhmyzEpV_NxYXKT3"/>
+</div>
+<div class="aspect-square bg-surface-container-highest overflow-hidden">
+<img alt="Lifestyle 4" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9BqBqtrT6rofuRMKrPp0zUcdv-MhGMjwQ7EY_xNCDp-oBxGCGL_55QGKzTHM0Xap2v21Zdk6b3rs3A22Ed7VwW-vQxLJxrwnSYqePO14a6BUhsMl18IHl5y3qaBpHPWGxV4kreCvuUmuZ047s7-dfrJgXkQzzY9Zngd0kL6CnVqiSX34reVPtmsNMgimXP0jn-I62RxLcp-f_VinB7Y_EHoN4Cw_iVP15ghAtR8h31gLv0e9YSvau"/>
+</div>
+<div class="aspect-square bg-surface-container-highest overflow-hidden">
+<img alt="Lifestyle 5" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPxgd5E9zc4bF6bfuuS6DAajZ-vLlOwb82G-qelDaGcnG7Nv2hr1B4MpqqX2N2GCHPckTP-F_jcarpNl3oBmn2bZH7_Wd86x4egShis7PfmriA0OdaCC8yBQbiOwBdhTV30kYAJLqXtIRM0BXB8Mmn5OWaHN2B6k5zHnFQ0DnpmGIuG_72wljisna0nenY852Ijr-2Fj9HGgNMpVVYOnyW-Rah9B5QlsHfHya7vRI4ZLFgELF2Zmp9"/>
+</div>
+</div>
+</section>
+<!-- Newsletter -->
+<section class="bg-primary py-24 text-white" id="newsletter">
+<div class="px-margin-mobile max-w-2xl mx-auto text-center" data-aos="zoom-in">
+<h2 class="font-serif-luxury text-[40px] md:text-[56px] mb-6">Join the Atelier</h2>
+<p class="font-body-md text-white/70 mb-10 text-lg leading-relaxed uppercase tracking-widest text-sm">Sign up for exclusive collection previews, private sales, and the art of living elegantly.</p>
+<form class="flex flex-col md:flex-row gap-4" onsubmit="event.preventDefault(); alert('Thank you for joining our atelier.');">
+<input class="flex-grow bg-white/10 border-b border-white/30 border-t-0 border-x-0 focus:ring-0 focus:border-white text-white placeholder:text-white/50 py-4 uppercase font-label-sm px-4" placeholder="YOUR EMAIL ADDRESS" required="" type="email"/>
+<button class="px-12 py-4 bg-white text-primary font-label-md uppercase tracking-widest hover:bg-tertiary-fixed transition-all">Subscribe</button>
+</form>
+<p class="mt-6 text-white/40 text-[10px] uppercase tracking-widest">By joining, you agree to our Privacy Policy</p>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low pt-stack-lg pb-10 border-t border-outline-variant/10">
+<div class="px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-20">
+<div class="space-y-6">
+<h3 class="font-display-lg text-headline-lg text-primary font-bold">JADORE ALAA</h3>
+<p class="font-body-md text-on-surface-variant">Elevating the everyday through the precision of couture. Designed in Alexandria, admired everywhere.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="https://www.facebook.com/share/1GzxjJjCEM/" target="_blank">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"></path></svg>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="https://www.facebook.com/share/1GzxjJjCEM/" target="_blank">
+<span class="material-symbols-outlined text-sm">camera</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-primary uppercase tracking-widest mb-6">Boutique</h4>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#curated-edit">Shop All</a></li>
+<li><a class="hover:text-primary transition-colors" href="#collections">Collections</a></li>
+<li><a class="hover:text-primary transition-colors" href="#curated-edit">Best Sellers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#newsletter">Gift Cards</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-primary uppercase tracking-widest mb-6">Experience</h4>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="https://wa.me/201000320065">Bespoke Couture</a></li>
+<li><a class="hover:text-primary transition-colors" href="https://wa.me/201000320065">Virtual Styling</a></li>
+<li><a class="hover:text-primary transition-colors" href="#social">The Atelier Journal</a></li>
+<li><a class="hover:text-primary transition-colors" href="#brand-story">Sustainability</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-primary uppercase tracking-widest mb-6">Client Service</h4>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Track Your Order</a></li>
+<li><a class="hover:text-primary transition-colors" href="https://wa.me/201000320065">Contact Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">FAQs</a></li>
+</ul>
+</div>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop border-t border-outline-variant/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="font-label-sm text-outline uppercase tracking-widest text-[10px]">© 2024 JADORE ALAA. All rights reserved. Crafted for the Discerning.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-outline">payments</span>
+<span class="material-symbols-outlined text-outline">credit_card</span>
+<span class="material-symbols-outlined text-outline">local_shipping</span>
+</div>
+<div class="flex gap-6 font-label-sm text-outline uppercase tracking-widest text-[10px]">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    // Luxury Preloader Logic
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        const loaderBar = document.getElementById('loader-bar');
+        
+        // Simulating loading bar progress
+        setTimeout(() => {
+            loaderBar.style.width = '100px';
+        }, 100);
+
+        setTimeout(() => {
+            preloader.style.opacity = '0';
+            preloader.style.visibility = 'hidden';
+            
+            // Initialize AOS after preloader
+            AOS.init({
+                duration: 1000,
+                easing: 'ease-out-cubic',
+                once: true,
+                mirror: false
+            });
+        }, 1200);
+    });
+
+    // Navbar Scroll Effect
+    const nav = document.getElementById('top-nav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            nav.classList.add('glass-nav', 'py-3', 'shadow-sm');
+            nav.classList.remove('py-5');
+        } else {
+            nav.classList.remove('glass-nav', 'py-3', 'shadow-sm');
+            nav.classList.add('py-5');
+        }
+    });
+
+    // Simple Countdown Logic
+    function updateCountdown() {
+        const target = new Date();
+        target.setDate(target.getDate() + 2); // Reset to 2 days ahead for demo
+        
+        const now = new Date();
+        const diff = target - now;
+
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minsEl = document.getElementById('mins');
+        const secsEl = document.getElementById('secs');
+
+        if(daysEl) daysEl.innerText = d.toString().padStart(2, '0');
+        if(hoursEl) hoursEl.innerText = h.toString().padStart(2, '0');
+        if(minsEl) minsEl.innerText = m.toString().padStart(2, '0');
+        if(secsEl) secsEl.innerText = s.toString().padStart(2, '0');
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+</body></html>
